@@ -42,6 +42,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define SPLIT_TRANSACTION_IDS_KB KEYBALL_GET_INFO, KEYBALL_GET_MOTION, KEYBALL_SET_CPI
 
+#ifdef CONVERT_TO_SPARKFUN_PM2040
+#    define SPI_DRIVER   SPID0
+#    define SPI_SCK_PIN  B1
+#    define SPI_MISO_PIN B3
+#    define SPI_MOSI_PIN B2
+// F_CPU is AVR-only. RP2040 rounds the divisor up to a power of two, so
+// 64 gives 125MHz / 64 = 1.95MHz, within the PMW3360 2MHz limit.
+#    define PMW3360_SPI_DIVISOR 64
+#endif
+
 // RGB LED settings
 #define WS2812_DI_PIN       D3
 #ifdef RGBLIGHT_ENABLE
