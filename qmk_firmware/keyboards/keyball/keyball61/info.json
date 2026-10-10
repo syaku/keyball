@@ -6,8 +6,12 @@
     },
     "manufacturer": "Yowkees",
     "keyboard_name": "Keyball61",
+    "processor": "atmega32u4",
+    "bootloader": "caterina",
     "rgblight": {
-        "driver": "ws2812"
+        "driver": "ws2812",
+        "led_count": 74,
+        "split_count": [37, 37]
     },
     "layouts": {
       "LAYOUT_no_ball": {
